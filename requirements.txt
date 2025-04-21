@@ -1,0 +1,12 @@
+aiogram==3.20.0.post0                    # интерфейсы Telegram API :contentReference[oaicite:1]{index=1}
+fastapi>=0.110
+uvicorn[standard]>=0.28
+SQLAlchemy>=2.0
+aiosqlite>=0.19
+python-dotenv>=1.0
+apscheduler>=3.10                        # таймеры + TZ :contentReference[oaicite:2]{index=2}
+kerykeion==2.1.6                         # натальные карты :contentReference[oaicite:3]{index=3}
+openai>=1.14                             # GPT‑4o и vision :contentReference[oaicite:4]{index=4}
+yookassa==3.0.0                          # Safe Deal NPD :contentReference[oaicite:5]{index=5}
+pendulum>=3.0
+python-multipart>=0.0.9                 # приём файлов FastAPI

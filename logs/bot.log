@@ -1,0 +1,31 @@
+2025-04-21 11:01:30,924 | INFO     | uvicorn.error | Started server process [19580]
+2025-04-21 11:01:30,925 | INFO     | uvicorn.error | Waiting for application startup.
+2025-04-21 11:01:30,927 | ERROR    | uvicorn.error | Traceback (most recent call last):
+  File "/Users/filippkilmetov/Desktop/astrobot/venv/lib/python3.12/site-packages/starlette/routing.py", line 692, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/Users/filippkilmetov/Desktop/astrobot/venv/lib/python3.12/site-packages/starlette/routing.py", line 569, in __aenter__
+    await self._router.startup()
+  File "/Users/filippkilmetov/Desktop/astrobot/venv/lib/python3.12/site-packages/starlette/routing.py", line 669, in startup
+    await handler()
+  File "/Users/filippkilmetov/Desktop/astrobot/app/bot.py", line 45, in on_startup
+    await init_db()
+  File "/Users/filippkilmetov/Desktop/astrobot/app/database.py", line 32, in init_db
+    async with engine.begin() as conn:
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 204, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/filippkilmetov/Desktop/astrobot/venv/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/engine.py", line 1066, in begin
+    async with conn:
+  File "/Users/filippkilmetov/Desktop/astrobot/venv/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/base.py", line 121, in __aenter__
+    return await self.start(is_ctxmanager=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/filippkilmetov/Desktop/astrobot/venv/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/engine.py", line 274, in start
+    await greenlet_spawn(self.sync_engine.connect)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/filippkilmetov/Desktop/astrobot/venv/lib/python3.12/site-packages/sqlalchemy/util/concurrency.py", line 99, in greenlet_spawn
+    _not_implemented()
+  File "/Users/filippkilmetov/Desktop/astrobot/venv/lib/python3.12/site-packages/sqlalchemy/util/concurrency.py", line 79, in _not_implemented
+    raise ValueError(
+ValueError: the greenlet library is required to use this function. No module named 'greenlet'
+
+2025-04-21 11:01:30,927 | ERROR    | uvicorn.error | Application startup failed. Exiting.
